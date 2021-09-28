@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "ceb2b998-9df3-40f1-92e4-cc2921df3dad",
+		"name": "Bank BWS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LINKINGATM COB",
+			"item": [
+				{
+					"name": "GET token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwNDEyMTM4NyIsInJvbGUiOiJVU0VSIn0.42lMmoh7GhY3I5MFZ1hi_gGqIqzKg8tphyqVNfOPyUKcDLBuK44kN2OYY2ZGPa4Z7j4C3k3B3gusGtGnjpsG4g",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"04121387\",\r\n    \"password\":\"bws@1906\"\r\n}"
+						},
+						"url": {
+							"raw": "http://172.18.20.67:9093/login",
+							"protocol": "http",
+							"host": [
+								"172",
+								"18",
+								"20",
+								"67"
+							],
+							"port": "9093",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inq linking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Trial",
+								"value": "True",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwNDEyMTM4NyIsInJvbGUiOiJVU0VSIn0.OO0AyFjV-D0gNg2l2fGOatk0TDgEzvUMl9fkTjeq4wlhBBsbQn66GjRyLwisWYzMFoVKNxTzzxHSLnnOAh0PfQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cif\":\"000611096\",\r\n    \"noKartu\":\"6057680600000069\",\r\n    \"branchCode\":\"913\",\r\n    \"tglLahir\":\"12-08-1990\"\r\n}"
+						},
+						"url": {
+							"raw": "http://172.18.20.67:9092/customer-onboarding/inq-link-atm-card",
+							"protocol": "http",
+							"host": [
+								"172",
+								"18",
+								"20",
+								"67"
+							],
+							"port": "9092",
+							"path": [
+								"customer-onboarding",
+								"inq-link-atm-card"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Linking ATM",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwNDEyMTM4NyIsInJvbGUiOiJVU0VSIn0.OO0AyFjV-D0gNg2l2fGOatk0TDgEzvUMl9fkTjeq4wlhBBsbQn66GjRyLwisWYzMFoVKNxTzzxHSLnnOAh0PfQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cif\":\"000609256\",\r\n    \"noKartu\":\"6057680600000069\",\r\n    \"branchCode\":\"913\",\r\n    \"tglLahir\":\"12-08-1990\",\r\n    \"accountNo\":\"100913124439\",\r\n    \"accountType\":\"02\",\r\n    \"linked\":\"not linked\",\r\n    \"primary\":\"100913124439\"\r\n}"
+						},
+						"url": {
+							"raw": "http://172.18.20.67:9093/customer-onboarding/post-link-atm-card",
+							"protocol": "http",
+							"host": [
+								"172",
+								"18",
+								"20",
+								"67"
+							],
+							"port": "9093",
+							"path": [
+								"customer-onboarding",
+								"post-link-atm-card"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase Voucher Game",
+			"item": [
+				{
+					"name": "Product List Voucher Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "customerId",
+								"value": "12165",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "sessionId",
+								"value": "{{sessionid}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "deviceId",
+								"value": "35406808144585911",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://172.18.20.67:8082/individual/rest/vouchergame/productList",
+							"protocol": "http",
+							"host": [
+								"172",
+								"18",
+								"20",
+								"67"
+							],
+							"port": "8082",
+							"path": [
+								"individual",
+								"rest",
+								"vouchergame",
+								"productList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Denom List Voucher Game",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"deliveryChannel\":\"11\",\r\n   \"deliveryChannelId\":\"35406808144585911\",\r\n   \"customerId\":12165,\r\n   \"accountNumber\":\"100913124788\",\r\n   \"transactionDate\":\"27 09 2021 15:36:37\",\r\n   \"transactionType\":\"AV\",\r\n   \"currencyCode\":\"360\",\r\n   \"amount\":9600.00000,\r\n   \"description\":\"Voucher Game Garena\",\r\n   \"descriptionFee\":\"-\",\r\n   \"cardNumber\":\"6280021100030968\",\r\n   \"terminalId\":\"GATEUSER\",\r\n   \"merchantType\":\"6017\",\r\n   \"toAccountType\":\"00\",\r\n   \"accountType\":\"10\",\r\n   \"batchProcess\":false,\r\n   \"fee\":0.00000,\r\n   \"transferType\":1,\r\n   \"billerCode\":\"07013\",\r\n   \"productCode\":\"GARENA\",\r\n   \"customerReference\":\"\",\r\n   \"productName\":\"Garena\",\r\n   \"providerCode\":\"PAC\",\r\n   \"denomination\":9600,\r\n   \"denominationCode\":\"GRN-V10\",\r\n   \"denominationName\":\"33 Shell\",\r\n   \"voucherCode\":\"0047\",\r\n   \"strDenomination\":\"9,600.00\",\r\n   \"strTotal\":\"Rp. 0,00\",\r\n   \"strAmount\":\"Rp. 9.600,00\",\r\n   \"strDeliveryChannel\":\"Mobile Banking\",\r\n   \"displayDestinationNote\":\"-\",\r\n   \"strTotalUsd\":\"Rp. 0.00\",\r\n   \"strAmountUsd\":\"Rp. 9,600.00\",\r\n   \"strFee\":\"Rp. 0,00\",\r\n   \"strTotal2\":\"Rp. 0,00\",\r\n   \"strFeeUsd\":\"Rp. 0.00\",\r\n   \"strTransferType\":\"Transaksi Sekarang\",\r\n   \"strTransferTypeEn\":\"Execute Now\",\r\n   \"strTransferTypeKo\":\"거래\",\r\n   \"strTransactionDate\":\"27-Sep-2021 15:36 WIB\"\r\n}"
+						},
+						"url": {
+							"raw": "http://172.18.20.67:8082/individual/rest/vouchergame/denomList",
+							"protocol": "http",
+							"host": [
+								"172",
+								"18",
+								"20",
+								"67"
+							],
+							"port": "8082",
+							"path": [
+								"individual",
+								"rest",
+								"vouchergame",
+								"denomList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inquiry Voucher Game",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody)\r",
+									"postman.setEnvironmentVariable(\"inquiryData\", jsonData.inquiryData)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "customerId",
+								"value": "12165",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "sessionId",
+								"value": "{{sessionId}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "deviceId",
+								"value": "35406808144585911",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "customerId",
+									"value": "12165",
+									"type": "text"
+								},
+								{
+									"key": "sessionId",
+									"value": "{{sessionId}}",
+									"type": "text"
+								},
+								{
+									"key": "deviceId",
+									"value": "35406808144585911",
+									"type": "text"
+								},
+								{
+									"key": "json",
+									"value": "{\"accountNumber\":\"100913124788\",\"billerCode\":\"07013\",\"productCode\":\"GARENA\",\"providerCode\":\"PAC\",\"denomination\":9600,\"denominationName\":\"33 Shell\",\"denominationCode\":\"GRN-V10\",\"voucherCode\":\"0047\",\"currencyCode\":\"IDR\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://172.18.20.67:8082/individual/rest/vouchergame/inquiryVoucherGamePurchase",
+							"protocol": "http",
+							"host": [
+								"172",
+								"18",
+								"20",
+								"67"
+							],
+							"port": "8082",
+							"path": [
+								"individual",
+								"rest",
+								"vouchergame",
+								"inquiryVoucherGamePurchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posting Voucher Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "customerId",
+								"value": "12165",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "sessionId",
+								"value": "{{sessionId}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "deviceId",
+								"value": "35406808144585911",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "customerId",
+									"value": "12165",
+									"type": "text"
+								},
+								{
+									"key": "sessionId",
+									"value": "{{sessionId}}",
+									"type": "text"
+								},
+								{
+									"key": "deviceId",
+									"value": "35406808144585911",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "json",
+									"value": "{{inquiryData}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://172.18.20.67:8082/individual/rest/vouchergame/postingVoucherGamePurchase",
+							"protocol": "http",
+							"host": [
+								"172",
+								"18",
+								"20",
+								"67"
+							],
+							"port": "8082",
+							"path": [
+								"individual",
+								"rest",
+								"vouchergame",
+								"postingVoucherGamePurchase"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody)\r",
+							"postman.setEnvironmentVariable(\"sessionId\", jsonData.sessionId)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "customerId",
+							"value": "12165",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "JAYA1906 ",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Saudara@123",
+							"type": "text"
+						},
+						{
+							"key": "versionId",
+							"value": "20210816",
+							"type": "text"
+						},
+						{
+							"key": "deviceId",
+							"value": "35406808144585911",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://172.18.20.67:8082/individual/rest/authentication/login",
+					"protocol": "http",
+					"host": [
+						"172",
+						"18",
+						"20",
+						"67"
+					],
+					"port": "8082",
+					"path": [
+						"individual",
+						"rest",
+						"authentication",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
