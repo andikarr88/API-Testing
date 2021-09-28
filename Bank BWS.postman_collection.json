@@ -158,8 +158,24 @@
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "",
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "customerId",
+									"value": "12165",
+									"type": "text"
+								},
+								{
+									"key": "sessionId",
+									"value": "{{sessionId}}",
+									"type": "text"
+								},
+								{
+									"key": "deviceId",
+									"value": "35406808144585911",
+									"type": "text"
+								}
+							],
 							"options": {
 								"raw": {
 									"language": "json"
@@ -192,8 +208,34 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n   \"deliveryChannel\":\"11\",\r\n   \"deliveryChannelId\":\"35406808144585911\",\r\n   \"customerId\":12165,\r\n   \"accountNumber\":\"100913124788\",\r\n   \"transactionDate\":\"27 09 2021 15:36:37\",\r\n   \"transactionType\":\"AV\",\r\n   \"currencyCode\":\"360\",\r\n   \"amount\":9600.00000,\r\n   \"description\":\"Voucher Game Garena\",\r\n   \"descriptionFee\":\"-\",\r\n   \"cardNumber\":\"6280021100030968\",\r\n   \"terminalId\":\"GATEUSER\",\r\n   \"merchantType\":\"6017\",\r\n   \"toAccountType\":\"00\",\r\n   \"accountType\":\"10\",\r\n   \"batchProcess\":false,\r\n   \"fee\":0.00000,\r\n   \"transferType\":1,\r\n   \"billerCode\":\"07013\",\r\n   \"productCode\":\"GARENA\",\r\n   \"customerReference\":\"\",\r\n   \"productName\":\"Garena\",\r\n   \"providerCode\":\"PAC\",\r\n   \"denomination\":9600,\r\n   \"denominationCode\":\"GRN-V10\",\r\n   \"denominationName\":\"33 Shell\",\r\n   \"voucherCode\":\"0047\",\r\n   \"strDenomination\":\"9,600.00\",\r\n   \"strTotal\":\"Rp. 0,00\",\r\n   \"strAmount\":\"Rp. 9.600,00\",\r\n   \"strDeliveryChannel\":\"Mobile Banking\",\r\n   \"displayDestinationNote\":\"-\",\r\n   \"strTotalUsd\":\"Rp. 0.00\",\r\n   \"strAmountUsd\":\"Rp. 9,600.00\",\r\n   \"strFee\":\"Rp. 0,00\",\r\n   \"strTotal2\":\"Rp. 0,00\",\r\n   \"strFeeUsd\":\"Rp. 0.00\",\r\n   \"strTransferType\":\"Transaksi Sekarang\",\r\n   \"strTransferTypeEn\":\"Execute Now\",\r\n   \"strTransferTypeKo\":\"거래\",\r\n   \"strTransactionDate\":\"27-Sep-2021 15:36 WIB\"\r\n}"
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "customerId",
+									"value": "12165",
+									"type": "text"
+								},
+								{
+									"key": "sessionId",
+									"value": "{{sessionId}}",
+									"type": "text"
+								},
+								{
+									"key": "deviceId",
+									"value": "35406808144585911",
+									"type": "text"
+								},
+								{
+									"key": "billerCode",
+									"value": "07013",
+									"type": "text"
+								},
+								{
+									"key": "productCode",
+									"value": "GARENA",
+									"type": "text"
+								}
+							]
 						},
 						"url": {
 							"raw": "http://172.18.20.67:8082/individual/rest/vouchergame/denomList",
@@ -274,7 +316,12 @@
 									"value": "{\"accountNumber\":\"100913124788\",\"billerCode\":\"07013\",\"productCode\":\"GARENA\",\"providerCode\":\"PAC\",\"denomination\":9600,\"denominationName\":\"33 Shell\",\"denominationCode\":\"GRN-V10\",\"voucherCode\":\"0047\",\"currencyCode\":\"IDR\"}",
 									"type": "text"
 								}
-							]
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "http://172.18.20.67:8082/individual/rest/vouchergame/inquiryVoucherGamePurchase",
@@ -348,7 +395,12 @@
 									"value": "{{inquiryData}}",
 									"type": "text"
 								}
-							]
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "http://172.18.20.67:8082/individual/rest/vouchergame/postingVoucherGamePurchase",
@@ -417,7 +469,12 @@
 							"value": "35406808144585911",
 							"type": "text"
 						}
-					]
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "http://172.18.20.67:8082/individual/rest/authentication/login",
